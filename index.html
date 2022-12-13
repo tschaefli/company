@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwissPrinting</title>
+    <script src="https://kit.fontawesome.com/043b03cd8f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header sticky-top py-1">
+        <nav class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2" href="#" aria-label="Product">Logo</a>
+            <a class="py-2 d-none d-md-inline-block" href="#angebot">Unser Angebot</a>
+            <a class="py-2 d-none d-md-inline-block" href="#order">3D-Druck bestellen</a>
+            <a class="py-2 d-none d-md-inline-block" href="#catalog">Produkte SwissPrinting</a>
+            <a class="py-2 d-none d-md-inline-block" href="#referenzprojekte">Referenzprojekte</a>
+            <a class="py-2 d-none d-md-inline-block" href="#team">Unser Team</a>
+            <a class="py-2 d-none d-md-inline-block" href="#agb">AGB</a>
+        </nav>
+    </header>
+    
+    <!-- Titel -->
+    <main>
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <h1 class="display-4 fw-normal">SwissPrinting</h1>
+                <p class="lead fw-normal">3D-Druck für jedermann, ob zuhause, auf der Arbeit oder nur zum Spass...</p>
+                <a class="btn btn-outline-secondary" href="#order">3D-Druck bestellen</a>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+
+    <!-- Infotext -->
+    <div class="container mt-5 text-center">
+        <h1>3D-Druck</h1>
+        <p>Der 3D-Drucker ist in der Industrie mitlerweile weit verbreitet und wird verwendet um schnelle erste Prototyp-Teile
+            herzustellen. Doch viele träumen auch vom eigenen 3D-Drucker zuhause. Doch die Zeit oder das KnowHow fehlt? Die
+            Kosten rentieren nicht einen eigenen 3D-Drucker anzuschaffen?
+        </p><p></p><p>
+            SwissPrinting hilft Ihnen gerne! <br />
+            Wir fertigen für Sie Ihre eigenen 3D-gedruckte Teile.
+        </p>
+    </div>
+
+
+    <!-- Bestellen -->
+    <div class="container px-4 py-5" id="hanging-icons">
+        <h1 class="text-center">Unser Angebot</h1>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Entwicklung</h3>
+                <p>
+                    Sie haben eine Idee und möchten diese umsetzen? <br>
+                    Sie benötigen Hilfe bei der Ausarbeitung Ihres Projekt? Kein Problem, SwissPrinting hilft Ihnen gerne weiter. <br>
+                    Senden sie uns eine Skizze oder beschreiben Sie uns ihre Idee.
+                </p>
+                <a class="btn btn-secondary href=#">Erfahren sie mehr »</a>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Herstellung</h3>
+                <p>
+                    Sie haben bereits ein fertiges Projekt? Sie möchten Ihr Projekt nun Herstellen? <br> <br>
+                    Senden Sie uns ihre Datei (.stl oder .stp) und teilen sie uns Ihre Anforderungen
+                    an Farbe, Qualität, Stückzahl und weiterem mit.<br>
+                </p>
+                <a class="btn btn-secondary href=#order">3D-Druck bestellen »</a>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Nachbearbeitung</h3>
+                <p>
+                    Sie benötigen Nacharbeiten an ihrem Bauteil? <br>
+                    SwissPrinting schneided für sie die nötigen Gewinde direkt in das gefertigte Bauteil oder presst
+                    Magnete und Muttern nach Ihren Wünschen ein. <br>
+                    Bei Fragen bezüglich der Nachbearbeitung von 3D-Druck kontaktieren sie uns.
+                </p>
+                <a class="btn btn-secondary href=#">Erfahren sie mehr »</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Bestellen -->
+    <!--
+        - Farbe
+        - Nachricht
+    -->
+    <div class="container mt-3 text-center" id="order">
+        <h1>3D-Druck bestellen</h1>
+        <p>
+            Bestellen Sie Ihren 3D-Druck direkt online hier bei SwissPrinting <br>
+            Bitte beachten Sie das unsere maximalen Dimensionen bei 220x220x270mm (LxBxH) liegen.
+        </p>
+        
+        <!-- Informationen die benötigt werden -->
+        <div class="row mb-3">
+            <div class="input-group input-group-lg">
+                <i class="fa-solid fa-user">
+                    <input type="text" id="vorname" placeholder="Vorname">
+                    <input type="text" id="nachname" placeholder="Nachname">
+                </i>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="input-group input-group-lg">
+                <i class="fa-solid fa-envelope">
+                    <input type="email" id="mail" placeholder="Max.mustermann@gmail.com">
+                </i>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="input-group input-group-lg">
+                <i class="fa-solid fa-gear">
+                    <select name="option" id="options">
+                        <option value="">-- Wählen Sie eine Option --</option>
+                        <option value="bestellung">Bestellung</option>
+                        <option value="offerte">Offerte</option>
+                        <option value="frage">Frage</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                </i>
+                <i class="fa-solid fa-code-compare">
+                    <input type="number" id="amount" placeholder="1">
+                </i>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="input-group input-group-lg">
+                <i class="fa-solid fa-droplet">
+                    <select name="farbe" id="farbe">
+                        <option value="">-- Wählen Sie eine Farbe --</option>
+                        <option value="schwarz">Schwarz</option>
+                        <option value="weiss">Weiss</option>
+                        <option value="multicolor">Farbwechsel</option>
+                        <option value="beigebraun">Beigebraun</option>
+                        <option value="eisengrau">Eisengrau</option>
+                        <option value="weinrot">Weinrot</option>
+                        <option value="himberrot">Himberrot</option>
+                        <option value="verkehrsrot">Verkehrsrot</option>
+                        <option value="reinorange">Reinorange</option>
+                        <option value="himmelblau">Himmelblau</option>
+                        <option value="mintturkis">Minttürkis</option>
+                        <option value="ultramarinblau">Ultramarinblau</option>
+                        <option value="nachtblau">Nachtblau</option>
+                        <option value="telemagenta">Telemagenta</option>
+                        <option value="violet">Violet</option>
+                        <option value="hellgrün">Hellgrün</option>
+                        <option value="gold">Gold</option>
+                        <option value="transparent">Transparent</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group input-group-lg">
+                <i class="fa-solid fa-calendar-days">
+                    <label for="termin">Wunschtermin</label>
+                    <input type="date" id="termin" placeholder="01.01.2022">
+                </i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group input-group-lg">                
+                <label for="text">Anmerkung</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group-input-group-lg">
+                <textarea id="text" name="text" cols="35" rows="4"></textarea> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group-input-group-lg">
+                <input type="checkbox" id="korrekt">
+                <p>
+                    Hiermit besätige ich alle Angaben korrekt ausgefüllt zu haben. Ich bin einverstanden das diese Angaben
+                    gespeichert werden und der Auftrag nach diesen ausgeführt wird. Nachträgliche Änderungen an den Auftragsdetails
+                    können nur in Ausnahmefällen vorgenommen werden.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group-input-group-lg">
+                <input type="checkbox" id="agb">
+                <p>
+                    Hiermit besätige ich die AGB's von SwissPrinting gelesen und verstanden zu haben und mit allen Punkten einverstanden
+                    bin. Ich stimme den Geschäftsbedingungen zu und erkläre micht mit sämtlichen Punkten einverstanden.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group input-group-lg">
+                <a class="btn btn-secondary href=#">Bestellung aufgeben</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Produktkatalog -->
+    <div class="containter mt-3" id="catalog">
+        <h1>Produkte SwissPrinting</h1>
+    </div>
+
+    <!-- Referenzprojekte -->
+    <div class="containter mt-3" id="referenzprojekte">
+        <h1>Referenzprojekte</h1>
+    </div>
+
+    <!-- Team -->
+    <div class="containter mt-3" id="team">
+        <h1>Unser Team</h1>
+    </div>
+
+    <!-- AGB -->
+    <div class="containter mt-3" id="agb">
+        <h1>Allgemeien Geschäftsbedingungen</h1>
+    </div>
+
+
+
+
+
+    <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <div id="111b6267-86ff-4b47-8532-966f3a42897b-quickmenu"></div></body>
+</body>
+</html>
