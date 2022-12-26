@@ -1,7 +1,40 @@
-.name-box {
-    background-color: lightgrey;
-    border-color: green;
-    opacity: 0.3;
-    width: 50%;
-    
+.input-box-type-1 {
+    border-color: grey;
+    border-width: 2px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-right: auto;
+    font-size: medium;
+    width: 99%;
+}
+
+.icon {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: normal;
+    tab-size: 1;
+    font-size: medium;
+}
+
+.team-protrait {
+    width: 95%;
+    height: auto;
+}
+
+.team-left {
+    text-align: left;
+}
+
+.role-title {
+    font-style: italic;
+}
+
+.paragraph {
+    color: darkslategrey;
+    font-style: italic;
+}
+
+.sub-paragraph {
+    color: darkslategrey;
+    font-style: italic;
 }
