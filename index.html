@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwissPrinting</title>
-    <script src="https://kit.fontawesome.com/043b03cd8f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/043b03cd8f.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -17,9 +17,9 @@
             <a class="py-2" href="#" aria-label="Product">Logo</a>
             <a class="py-2 d-none d-md-inline-block" href="#angebot">Unser Angebot</a>
             <a class="py-2 d-none d-md-inline-block" href="#order">3D-Druck bestellen</a>
-            <a class="py-2 d-none d-md-inline-block" href="#catalog">Produkte SwissPrinting</a>
-            <a class="py-2 d-none d-md-inline-block" href="#referenzprojekte">Referenzprojekte</a>
+            <a class="py-2 d-none d-md-inline-block" href="#farben">Farben</a>
             <a class="py-2 d-none d-md-inline-block" href="#team">Unser Team</a>
+            <a class="py-2 d-none d-md-inline-block" href="#referenzprojekte">Referenzprojekte</a>
             <a class="py-2 d-none d-md-inline-block" href="#agb">AGB</a>
         </nav>
     </header>
@@ -55,7 +55,7 @@
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                <i class="fa-solid fa-user-gear" width="1em" height="1em"></i>
             </div>
             <div>
                 <h3 class="fs-2">Entwicklung</h3>
@@ -69,7 +69,7 @@
         </div>
         <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                <i class="fa-solid fa-cube" width="1em" height="1em"></i>
             </div>
             <div>
                 <h3 class="fs-2">Herstellung</h3>
@@ -78,12 +78,12 @@
                     Senden Sie uns ihre Datei (.stl oder .stp) und teilen sie uns Ihre Anforderungen
                     an Farbe, Qualität, Stückzahl und weiterem mit.<br>
                 </p>
-                <a class="btn btn-secondary href=#order">3D-Druck bestellen »</a>
+                <a class="btn btn-secondary" href="#order">3D-Druck bestellen »</a>
             </div>
         </div>
         <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                <i class="fa-solid fa-wrench" width="1em" height="1em"></i>
             </div>
             <div>
                 <h3 class="fs-2">Nachbearbeitung</h3>
@@ -99,99 +99,106 @@
         </div>
     </div>
 
+
     <!-- Bestellen -->
-    <!--
-        - Farbe
-        - Nachricht
-    -->
-    <div class="container mt-3 text-center" id="order">
+    <div class="container mt-2 mb-4 text-center" id="order">
         <h1>3D-Druck bestellen</h1>
         <p>
             Bestellen Sie Ihren 3D-Druck direkt online hier bei SwissPrinting <br>
-            Bitte beachten Sie das unsere maximalen Dimensionen bei 220x220x270mm (LxBxH) liegen.
+            Bitte beachten Sie das unsere maximalen Dimensionen bei 220x220x270mm (LxBxH) liegen. <br>
+            Bitte beachten Sie das Lieferverzögerungen bei Farbauswahl von nicht lagernden Farben auftreten können.
         </p>
         
         <!-- Informationen die benötigt werden -->
         <div class="row mb-3">
-            <div class="input-group input-group-lg">
-                <i class="fa-solid fa-user">
-                    <input type="text" id="vorname" placeholder="Vorname">
-                    <input type="text" id="nachname" placeholder="Nachname">
-                </i>
+            <div class="col-12 col-md-2">
+                <i class="fa-solid fa-user"> <b class="icon">Personaldaten</b></i>
+            </div>
+            <div class="col-12 col-md-5">
+                <input type="text" id="vorname" placeholder="Vorname" class="input-box-type-1">
+            </div>
+            <div class="col-12 col-md-5">
+                <input type="text" id="nachname" placeholder="Nachname" class="input-box-type-1">
             </div>
         </div>
         <div class="row mb-3">
-            <div class="input-group input-group-lg">
-                <i class="fa-solid fa-envelope">
-                    <input type="email" id="mail" placeholder="Max.mustermann@gmail.com">
-                </i>
+            <div class="col-12 col-md-2">
+                <i class="fa-solid fa-envelope"> <b class="icon">E-Mail</b></i>
+            </div>
+            <div class="col-12 col-md-5">
+                <input type="email" id="mail" placeholder="Max.mustermann@gmail.com" class="input-box-type-1">
+            </div>
+            <div class="col-12 col-md-1">
+                <i class="fa-solid fa-hashtag"> <b class="icon">Anzahl</b></i>
+            </div>
+            <div class="col-12 col-md-4">
+                <input type="number" id="amount" placeholder="1" class="input-box-type-1">
             </div>
         </div>
         <div class="row mb-3">
-            <div class="input-group input-group-lg">
-                <i class="fa-solid fa-gear">
-                    <select name="option" id="options">
-                        <option value="">-- Wählen Sie eine Option --</option>
-                        <option value="bestellung">Bestellung</option>
-                        <option value="offerte">Offerte</option>
-                        <option value="frage">Frage</option>
-                        <option value="sonstiges">Sonstiges</option>
-                    </select>
-                </i>
-                <i class="fa-solid fa-code-compare">
-                    <input type="number" id="amount" placeholder="1">
-                </i>
+            <div class="col-12 col-md-2">
+                <i class="fa-solid fa-link"> <b class="icon">Link</b></i>
+            </div>
+            <div class="col-12 col-md-10">
+                <input type="url" id="link_to_file" placeholder="https://www.thingiverse.com/id=?" class="input-box-type-1">
             </div>
         </div>
-        <div class="row mb-5">
-            <div class="input-group input-group-lg">
-                <i class="fa-solid fa-droplet">
-                    <select name="farbe" id="farbe">
-                        <option value="">-- Wählen Sie eine Farbe --</option>
-                        <option value="schwarz">Schwarz</option>
-                        <option value="weiss">Weiss</option>
-                        <option value="multicolor">Farbwechsel</option>
-                        <option value="beigebraun">Beigebraun</option>
-                        <option value="eisengrau">Eisengrau</option>
-                        <option value="weinrot">Weinrot</option>
-                        <option value="himberrot">Himberrot</option>
-                        <option value="verkehrsrot">Verkehrsrot</option>
-                        <option value="reinorange">Reinorange</option>
-                        <option value="himmelblau">Himmelblau</option>
-                        <option value="mintturkis">Minttürkis</option>
-                        <option value="ultramarinblau">Ultramarinblau</option>
-                        <option value="nachtblau">Nachtblau</option>
-                        <option value="telemagenta">Telemagenta</option>
-                        <option value="violet">Violet</option>
-                        <option value="hellgrün">Hellgrün</option>
-                        <option value="gold">Gold</option>
-                        <option value="transparent">Transparent</option>
-                        <option value="custom">Custom</option>
-                    </select>
-                </i>
+        <div class="row mb-3">
+            <div class="col-12 col-md-2">
+                <i class="fa-solid fa-droplet"> <b class="icon">Farbe</b></i>
+            </div>
+            <div class="col-12 col-md-5">
+                <select name="farbe" id="farbe" class="input-box-type-1">
+                    <option value="">-- Wählen Sie eine Farbe --</option>
+                    <option value="schwarz">Schwarz</option>
+                    <option value="weiss">Weiss</option>
+                    <option value="multicolor">Farbwechsel</option>
+                    <option value="beigebraun">Beigebraun</option>
+                    <option value="eisengrau">Eisengrau</option>
+                    <option value="weinrot">Weinrot</option>
+                    <option value="himberrot">Himberrot</option>
+                    <option value="verkehrsrot">Verkehrsrot</option>
+                    <option value="reinorange">Reinorange</option>
+                    <option value="himmelblau">Himmelblau</option>
+                    <option value="mintturkis">Minttürkis</option>
+                    <option value="ultramarinblau">Ultramarinblau</option>
+                    <option value="nachtblau">Nachtblau</option>
+                    <option value="telemagenta">Telemagenta</option>
+                    <option value="violet">Violet</option>
+                    <option value="hellgrün">Hellgrün</option>
+                    <option value="gold">Gold</option>
+                    <option value="transparent">Transparent</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+            <div class="col-12 col-md-1">
+                <i class="fa-solid fa-calendar-days"> <b class="icon">Datum</b></i>
+            </div>
+            <div class="col-12 col-md-4">
+                <input type="date" id="termin" placeholder="01.01.2025" class="input-box-type-1">
             </div>
         </div>
-        <div class="row">
-            <div class="input-group input-group-lg">
-                <i class="fa-solid fa-calendar-days">
-                    <label for="termin">Wunschtermin</label>
-                    <input type="date" id="termin" placeholder="01.01.2022">
-                </i>
+        <div class="row mb-3">
+            <div class="col-12 col-md-2">
+                <i class="fa-solid fa-paperclip"> <b class="icon">Ihre Datei</b></i>
+            </div>
+            <div class="col-12 col-md-10">
+                <input type="file" id="file" class="input-box-type-1">
             </div>
         </div>
-        <div class="row">
-            <div class="input-group input-group-lg">                
-                <label for="text">Anmerkung</label>
+        <div class="row mb-3">
+            <div class="col-12 col-md-2">
+                <i class="fa-solid fa-book"> <b class="icon">Ihre Nachricht</b></i>
+            </div>
+            <div class="col-12 col-md-10">
+                <textarea id="text" name="text" cols="35" rows="4" class="input-box-type-1" placeholder="Anmerkungen, zusästliche Informationen, ..."></textarea> 
             </div>
         </div>
-        <div class="row">
-            <div class="input-group-input-group-lg">
-                <textarea id="text" name="text" cols="35" rows="4"></textarea> 
+        <div class="row mb-1">
+            <div class="col-12 col-md-1">
+                <input type="checkbox" id="correct_order">
             </div>
-        </div>
-        <div class="row">
-            <div class="input-group-input-group-lg">
-                <input type="checkbox" id="korrekt">
+            <div class="col-12 col-md-11">
                 <p>
                     Hiermit besätige ich alle Angaben korrekt ausgefüllt zu haben. Ich bin einverstanden das diese Angaben
                     gespeichert werden und der Auftrag nach diesen ausgeführt wird. Nachträgliche Änderungen an den Auftragsdetails
@@ -199,9 +206,11 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            <div class="input-group-input-group-lg">
+        <div class="row mb-1">
+            <div class="col-12 col-md-1">
                 <input type="checkbox" id="agb">
+            </div>
+            <div class="col-12 col-md-11">
                 <p>
                     Hiermit besätige ich die AGB's von SwissPrinting gelesen und verstanden zu haben und mit allen Punkten einverstanden
                     bin. Ich stimme den Geschäftsbedingungen zu und erkläre micht mit sämtlichen Punkten einverstanden.
@@ -209,36 +218,248 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-group input-group-lg">
+            <div class="col-12 col-sm-3"></div>
+            <div class="col-12 col-sm-6">
                 <a class="btn btn-secondary href=#">Bestellung aufgeben</a>
             </div>
         </div>
-
     </div>
 
-    <!-- Produktkatalog -->
-    <div class="containter mt-3" id="catalog">
-        <h1>Produkte SwissPrinting</h1>
-    </div>
 
-    <!-- Referenzprojekte -->
-    <div class="containter mt-3" id="referenzprojekte">
-        <h1>Referenzprojekte</h1>
+    <!-- Farben -->
+    <div class="containter mt-5 text-center" id="farben">
+        <h1>Unsere Farbauswahl</h1>
+        <div class="container">
+            <div class="row">
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="black"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Schwarz</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="white"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Weiss</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="lightgrey"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Farbwechsel</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#795438"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Beigebraun</p>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="row">
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#5D5F66"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Eisengrau</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#784A6D"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Weinrot</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#D14655"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Himberrot</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#D71D1F"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Verkehrsrot</p>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="row">
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#E2602A"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Reinorange</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#0495E7"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Himmelblau</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#267E83"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Minttürkis</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#014EBC"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Ultramarinblau</p>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="row">
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#2D4770"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Nachtblau</p>
+                    </div>  
+                    </div>
+                </div>
+                <!-- Card -->   
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#B53492"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                    <div class="card-body">
+                        <p class="card-text">Telemagenta</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#7455AB"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                    <div class="card-body">
+                        <p class="card-text">Violet</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#80E04C"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                    <div class="card-body">
+                        <p class="card-text">Hellgrün</p>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="row">
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                      <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="#E5AE49"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                      <div class="card-body">
+                        <p class="card-text">Gold</p>
+                    </div>  
+                    </div>
+                </div>
+                <!-- Card -->   
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="lightgrey"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                    <div class="card-body">
+                        <p class="card-text">Transparent</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="125"><rect width="100%" height="100%" fill="lightgrey"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+                    <div class="card-body">
+                        <p class="card-text">Custom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Team -->
-    <div class="containter mt-3" id="team">
+    <div class="containter mt-5 text-center" id="team">
         <h1>Unser Team</h1>
+        <div class="row featurette">
+            <!-- Timo Schäfer -->
+            <div class="col-12 col-md-3 order-md-"></div>
+            <div class="col-12 col-md-4 order-md-3">
+                <div class="team-left">
+                    <h2>Timo Schäfer</h2>
+                    <h5 class="role-title">CEO / Founder - Konstrukteur EFZ</h5>
+                    <p class="lead">
+                        Die Firma SwissPrinting wurde von mir im Jahr 2023 gegründet. Ich habe meine Lehre als Konstrukteur bei einem international tätigem Unternehmen abgeschlossen und arbeite immer noch in demselben Unternehmen. 
+                        Nebenbei mache ich meinen Bachelor of Science in einer Richtung des Maschinenbaus. Die Idee zur Gründung von SwissPrinting entstand während der Lehrzeit als ich vermehr mit dem 3D-Druck in Kontakt kam. Nach einem Jahr von privaten Anfragen für 3D-Druck entschied ich mich nun das ganze
+                        offiziell zu machen. SwissPrinting soll Ihnen dabei helfen von Beginn an mit erfahrenen Personen in Bereich der adaptiven Fertigung zu arbeiten. Wir bieten Ihnen dabei unsere mehrjährige Erfahrung in diesen
+                        Bereichen an, sodass Sie mit Ihren Projekten bereits von beginn an Erfolg haben werden. 
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 col-md-2 order-md-2">
+                <img class="team-protrait" src="team/timo_schaefer.JPG">
+            </div>
+            <div class="col-12 col-md-2 order-md-4"></div>
+            <!-- Ende Person -->
+        </div>   
+    </div>
+    
+    <!-- Referenzprojekte -->
+    <div class="containter mt-5 text-center" id="referenzprojekte">
+        <h1>Referenzprojekte</h1>
     </div>
 
     <!-- AGB -->
-    <div class="containter mt-3" id="agb">
+    <div class="containter mt-5 text-center" id="agb">
         <h1>Allgemeien Geschäftsbedingungen</h1>
+
+        <h4 class="paragraph">§1 Geltungsbereich</h4>
+        <p>
+           Sobald eine Bestellung bei der SwissPrinting GmbH getätigt wurde tretten der Käufer, folgend Kunde genannt, und die SwissPrinting GmbH, folgend SwissPrinting genannt, in ein Vertragsverhältnis.  
+        </p>
+
+        <h4 class="paragraph">§2 Gültigkeit</h4>
+        <h4 class="paragraph">§3 Leistungen</h4>
+        <h4 class="paragraph">§4 Preise und Zahlungsbedingungen</h4>
+        <h4 class="paragraph">§5 Haftung</h4>
+        <h4 class="paragraph">§6 Wiederrufsrecht</h4>
     </div>
-
-
-
-
 
     <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <div id="111b6267-86ff-4b47-8532-966f3a42897b-quickmenu"></div></body>
