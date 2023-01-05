@@ -10,17 +10,18 @@
     <script src="https://kit.fontawesome.com/043b03cd8f.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <script src="index.js"></script>
 
     <!-- Header -->
-    <header class="site-header sticky-top py-1">
+    <header class="site-header sticky-top py-1 header">
         <nav class="container d-flex flex-column flex-md-row justify-content-between">
             <a class="py-2" href="#" aria-label="Product">Logo</a>
-            <a class="py-2 d-none d-md-inline-block" href="#angebot">Unser Angebot</a>
-            <a class="py-2 d-none d-md-inline-block" href="#order">3D-Druck bestellen</a>
-            <a class="py-2 d-none d-md-inline-block" href="#farben">Farben</a>
-            <a class="py-2 d-none d-md-inline-block" href="#team">Unser Team</a>
-            <a class="py-2 d-none d-md-inline-block" href="#referenzprojekte">Referenzprojekte</a>
-            <a class="py-2 d-none d-md-inline-block" href="#agb">AGB</a>
+            <a class="py-2 d-none d-md-inline-block selection" href="#angebot">Unser Angebot</a>
+            <a class="py-2 d-none d-md-inline-block selection" href="#order">3D-Druck bestellen</a>
+            <a class="py-2 d-none d-md-inline-block selection" href="#farben">Farben</a>
+            <a class="py-2 d-none d-md-inline-block selection" href="#team">Unser Team</a>
+            <a class="py-2 d-none d-md-inline-block selection" href="#referenzprojekte">Referenzprojekte</a>
+            <a class="py-2 d-none d-md-inline-block selection" href="#agb">AGB</a>
         </nav>
     </header>
     
@@ -64,7 +65,7 @@
                     Sie benötigen Hilfe bei der Ausarbeitung Ihres Projekt? Kein Problem, SwissPrinting hilft Ihnen gerne weiter. <br>
                     Senden sie uns eine Skizze oder beschreiben Sie uns ihre Idee.
                 </p>
-                <a class="btn btn-secondary href=#">Erfahren sie mehr »</a>
+                <a class="btn btn-secondary btn-hover-1">Erfahren sie mehr »</a>
             </div>
         </div>
         <div class="col d-flex align-items-start">
@@ -78,7 +79,7 @@
                     Senden Sie uns ihre Datei (.stl oder .stp) und teilen sie uns Ihre Anforderungen
                     an Farbe, Qualität, Stückzahl und weiterem mit.<br>
                 </p>
-                <a class="btn btn-secondary" href="#order">3D-Druck bestellen »</a>
+                <a class="btn btn-secondary btn-hover-1">Erfahren sie mehr »</a>
             </div>
         </div>
         <div class="col d-flex align-items-start">
@@ -93,7 +94,7 @@
                     Magnete und Muttern nach Ihren Wünschen ein. <br>
                     Bei Fragen bezüglich der Nachbearbeitung von 3D-Druck kontaktieren sie uns.
                 </p>
-                <a class="btn btn-secondary href=#">Erfahren sie mehr »</a>
+                <a class="btn btn-secondary btn-hover-1">Erfahren sie mehr »</a>
             </div>
         </div>
         </div>
@@ -110,119 +111,121 @@
         </p>
         
         <!-- Informationen die benötigt werden -->
-        <div class="row mb-3">
-            <div class="col-12 col-md-2">
-                <i class="fa-solid fa-user"> <b class="icon">Personaldaten</b></i>
+        <form onsubmit="checkForm()">
+            <div class="row mb-3">
+                <div class="col-12 col-md-2">
+                    <i class="fa-solid fa-user"> <b class="icon">Personaldaten</b></i>
+                </div>
+                <div class="col-12 col-md-5">
+                    <input type="text" id="vorname" placeholder="Vorname" class="input-box-type-1">
+                </div>
+                <div class="col-12 col-md-5">
+                    <input type="text" id="nachname" placeholder="Nachname" class="input-box-type-1">
+                </div>
             </div>
-            <div class="col-12 col-md-5">
-                <input type="text" id="vorname" placeholder="Vorname" class="input-box-type-1">
+            <div class="row mb-3">
+                <div class="col-12 col-md-2">
+                    <i class="fa-solid fa-envelope"> <b class="icon">E-Mail</b></i>
+                </div>
+                <div class="col-12 col-md-5">
+                    <input type="email" id="mail" placeholder="Max.mustermann@gmail.com" class="input-box-type-1">
+                </div>
+                <div class="col-12 col-md-1">
+                    <i class="fa-solid fa-hashtag"> <b class="icon">Anzahl</b></i>
+                </div>
+                <div class="col-12 col-md-4">
+                    <input type="number" id="amount" placeholder="1" class="input-box-type-1">
+                </div>
             </div>
-            <div class="col-12 col-md-5">
-                <input type="text" id="nachname" placeholder="Nachname" class="input-box-type-1">
+            <div class="row mb-3">
+                <div class="col-12 col-md-2">
+                    <i class="fa-solid fa-link"> <b class="icon">Link</b></i>
+                </div>
+                <div class="col-12 col-md-10">
+                    <input type="url" id="link_to_file" placeholder="https://www.thingiverse.com/id=?" class="input-box-type-1">
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-12 col-md-2">
-                <i class="fa-solid fa-envelope"> <b class="icon">E-Mail</b></i>
+            <div class="row mb-3">
+                <div class="col-12 col-md-2">
+                    <i class="fa-solid fa-droplet"> <b class="icon">Farbe</b></i>
+                </div>
+                <div class="col-12 col-md-5">
+                    <select name="farbe" id="farbe" class="input-box-type-1">
+                        <option value="nochoice">-- Wählen Sie eine Farbe --</option>
+                        <option value="schwarz">Schwarz</option>
+                        <option value="weiss">Weiss</option>
+                        <option value="multicolor">Farbwechsel</option>
+                        <option value="beigebraun">Beigebraun</option>
+                        <option value="eisengrau">Eisengrau</option>
+                        <option value="weinrot">Weinrot</option>
+                        <option value="himberrot">Himberrot</option>
+                        <option value="verkehrsrot">Verkehrsrot</option>
+                        <option value="reinorange">Reinorange</option>
+                        <option value="himmelblau">Himmelblau</option>
+                        <option value="mintturkis">Minttürkis</option>
+                        <option value="ultramarinblau">Ultramarinblau</option>
+                        <option value="nachtblau">Nachtblau</option>
+                        <option value="telemagenta">Telemagenta</option>
+                        <option value="violet">Violet</option>
+                        <option value="hellgrün">Hellgrün</option>
+                        <option value="gold">Gold</option>
+                        <option value="transparent">Transparent</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-1">
+                    <i class="fa-solid fa-calendar-days" class="input-box-type-1"> <b class="icon">Datum</b></i>
+                </div>
+                <div class="col-12 col-md-4">
+                    <input type="date" id="termin" placeholder="01.01.2025" class="input-box-type-1">
+                </div>
             </div>
-            <div class="col-12 col-md-5">
-                <input type="email" id="mail" placeholder="Max.mustermann@gmail.com" class="input-box-type-1">
+            <div class="row mb-3">
+                <div class="col-12 col-md-2">
+                    <i class="fa-solid fa-paperclip"> <b class="icon">Ihre Datei</b></i>
+                </div>
+                <div class="col-12 col-md-10">
+                    <input type="file" id="file" class="input-box-type-1">
+                </div>
             </div>
-            <div class="col-12 col-md-1">
-                <i class="fa-solid fa-hashtag"> <b class="icon">Anzahl</b></i>
+            <div class="row mb-3">
+                <div class="col-12 col-md-2">
+                    <i class="fa-solid fa-book"> <b class="icon">Ihre Nachricht</b></i>
+                </div>
+                <div class="col-12 col-md-10">
+                    <textarea id="text" name="text" cols="35" rows="4" class="input-box-type-1" placeholder="Anmerkungen, zusästliche Informationen, ..."></textarea> 
+                </div>
             </div>
-            <div class="col-12 col-md-4">
-                <input type="number" id="amount" placeholder="1" class="input-box-type-1">
+            <div class="row mb-1">
+                <div class="col-12 col-md-1">
+                    <input type="checkbox" id="correct_order">
+                </div>
+                <div class="col-12 col-md-11">
+                    <p>
+                        Hiermit besätige ich alle Angaben korrekt ausgefüllt zu haben. Ich bin einverstanden das diese Angaben
+                        gespeichert werden und der Auftrag nach diesen ausgeführt wird. Nachträgliche Änderungen an den Auftragsdetails
+                        können nur in Ausnahmefällen vorgenommen werden.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-12 col-md-2">
-                <i class="fa-solid fa-link"> <b class="icon">Link</b></i>
+            <div class="row mb-1">
+                <div class="col-12 col-md-1">
+                    <input type="checkbox" id="agb">
+                </div>
+                <div class="col-12 col-md-11">
+                    <p>
+                        Hiermit besätige ich die AGB's von SwissPrinting gelesen und verstanden zu haben und mit allen Punkten einverstanden
+                        bin. Ich stimme den Geschäftsbedingungen zu und erkläre micht mit sämtlichen Punkten einverstanden.
+                    </p>
+                </div>
             </div>
-            <div class="col-12 col-md-10">
-                <input type="url" id="link_to_file" placeholder="https://www.thingiverse.com/id=?" class="input-box-type-1">
+            <div class="row">
+                <div class="col-12 col-sm-3"></div>
+                <div class="col-12 col-sm-6">
+                    <input type="submit" value="Submit" class="btn btn-secondary btn-hover-1" value="Bestellung aufgeben" href="#order">
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-12 col-md-2">
-                <i class="fa-solid fa-droplet"> <b class="icon">Farbe</b></i>
-            </div>
-            <div class="col-12 col-md-5">
-                <select name="farbe" id="farbe" class="input-box-type-1">
-                    <option value="">-- Wählen Sie eine Farbe --</option>
-                    <option value="schwarz">Schwarz</option>
-                    <option value="weiss">Weiss</option>
-                    <option value="multicolor">Farbwechsel</option>
-                    <option value="beigebraun">Beigebraun</option>
-                    <option value="eisengrau">Eisengrau</option>
-                    <option value="weinrot">Weinrot</option>
-                    <option value="himberrot">Himberrot</option>
-                    <option value="verkehrsrot">Verkehrsrot</option>
-                    <option value="reinorange">Reinorange</option>
-                    <option value="himmelblau">Himmelblau</option>
-                    <option value="mintturkis">Minttürkis</option>
-                    <option value="ultramarinblau">Ultramarinblau</option>
-                    <option value="nachtblau">Nachtblau</option>
-                    <option value="telemagenta">Telemagenta</option>
-                    <option value="violet">Violet</option>
-                    <option value="hellgrün">Hellgrün</option>
-                    <option value="gold">Gold</option>
-                    <option value="transparent">Transparent</option>
-                    <option value="custom">Custom</option>
-                </select>
-            </div>
-            <div class="col-12 col-md-1">
-                <i class="fa-solid fa-calendar-days"> <b class="icon">Datum</b></i>
-            </div>
-            <div class="col-12 col-md-4">
-                <input type="date" id="termin" placeholder="01.01.2025" class="input-box-type-1">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-12 col-md-2">
-                <i class="fa-solid fa-paperclip"> <b class="icon">Ihre Datei</b></i>
-            </div>
-            <div class="col-12 col-md-10">
-                <input type="file" id="file" class="input-box-type-1">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-12 col-md-2">
-                <i class="fa-solid fa-book"> <b class="icon">Ihre Nachricht</b></i>
-            </div>
-            <div class="col-12 col-md-10">
-                <textarea id="text" name="text" cols="35" rows="4" class="input-box-type-1" placeholder="Anmerkungen, zusästliche Informationen, ..."></textarea> 
-            </div>
-        </div>
-        <div class="row mb-1">
-            <div class="col-12 col-md-1">
-                <input type="checkbox" id="correct_order">
-            </div>
-            <div class="col-12 col-md-11">
-                <p>
-                    Hiermit besätige ich alle Angaben korrekt ausgefüllt zu haben. Ich bin einverstanden das diese Angaben
-                    gespeichert werden und der Auftrag nach diesen ausgeführt wird. Nachträgliche Änderungen an den Auftragsdetails
-                    können nur in Ausnahmefällen vorgenommen werden.
-                </p>
-            </div>
-        </div>
-        <div class="row mb-1">
-            <div class="col-12 col-md-1">
-                <input type="checkbox" id="agb">
-            </div>
-            <div class="col-12 col-md-11">
-                <p>
-                    Hiermit besätige ich die AGB's von SwissPrinting gelesen und verstanden zu haben und mit allen Punkten einverstanden
-                    bin. Ich stimme den Geschäftsbedingungen zu und erkläre micht mit sämtlichen Punkten einverstanden.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-3"></div>
-            <div class="col-12 col-sm-6">
-                <a class="btn btn-secondary href=#">Bestellung aufgeben</a>
-            </div>
-        </div>
+        </form>
     </div>
 
 
@@ -419,21 +422,21 @@
         <h1>Unser Team</h1>
         <div class="row featurette">
             <!-- Timo Schäfer -->
-            <div class="col-12 col-md-3 order-md-"></div>
-            <div class="col-12 col-md-4 order-md-3">
-                <div class="team-left">
+            <div class="col-12 col-lg-3 order-md-"></div>
+            <div class="col-12 col-lg-4 order-md-3">
+                <div class="team-info-1">
                     <h2>Timo Schäfer</h2>
                     <h5 class="role-title">CEO / Founder - Konstrukteur EFZ</h5>
-                    <p class="lead">
+                    <p class="lead person-info-1">
                         Die Firma SwissPrinting wurde von mir im Jahr 2023 gegründet. Ich habe meine Lehre als Konstrukteur bei einem international tätigem Unternehmen abgeschlossen und arbeite immer noch in demselben Unternehmen. 
-                        Nebenbei mache ich meinen Bachelor of Science in einer Richtung des Maschinenbaus. Die Idee zur Gründung von SwissPrinting entstand während der Lehrzeit als ich vermehr mit dem 3D-Druck in Kontakt kam. Nach einem Jahr von privaten Anfragen für 3D-Druck entschied ich mich nun das ganze
-                        offiziell zu machen. SwissPrinting soll Ihnen dabei helfen von Beginn an mit erfahrenen Personen in Bereich der adaptiven Fertigung zu arbeiten. Wir bieten Ihnen dabei unsere mehrjährige Erfahrung in diesen
-                        Bereichen an, sodass Sie mit Ihren Projekten bereits von beginn an Erfolg haben werden. 
+                        Nebenbei mache ich meinen Bachelor of Science in einer Richtung des Maschinenbaus. Die Idee zur Gründung von SwissPrinting entstand während der Lehrzeit als ich vermehr mit dem 3D-Druck in Kontakt kam. Nach
+                        einem Jahr von privaten Anfragen für 3D-Druck entschied ich mich nun das ganze offiziell zu machen. SwissPrinting soll Ihnen dabei helfen von Beginn an mit erfahrenen Personen in Bereich der adaptiven Fertigung
+                        zu arbeiten. Wir bieten Ihnen dabei unsere mehrjährige Erfahrung in diesen Bereichen an, sodass Sie mit Ihren Projekten bereits von beginn an Erfolg haben werden. 
                     </p>
                 </div>
             </div>
-            <div class="col-12 col-md-2 order-md-2">
-                <img class="team-protrait" src="timo_schaefer.JPG">
+            <div class="col-12 col-lg-2 order-md-2">
+                <img class="team-protrait" src="team/timo_schaefer.JPG">
             </div>
             <div class="col-12 col-md-2 order-md-4"></div>
             <!-- Ende Person -->
@@ -445,21 +448,83 @@
         <h1>Referenzprojekte</h1>
     </div>
 
-    <!-- AGB -->
+    <!-- AGB
     <div class="containter mt-5 text-center" id="agb">
-        <h1>Allgemeien Geschäftsbedingungen</h1>
+        <div class="row">
+            <div class="col-12 col-md-3"></div>
+            <div class="col-12 col-md-5">
+                <h1>Allgemeien Geschäftsbedingungen</h1>
 
-        <h4 class="paragraph">§1 Geltungsbereich</h4>
-        <p>
-           Sobald eine Bestellung bei der SwissPrinting GmbH getätigt wurde tretten der Käufer, folgend Kunde genannt, und die SwissPrinting GmbH, folgend SwissPrinting genannt, in ein Vertragsverhältnis.  
-        </p>
+                <h4 class="paragraph">§1 Geltungsbereich der AGB</h4>
+                <p>
+                    Diese AGB gelten für alle Lieferungen, Leistungen und Produkte, die von der SwissPrinting GmbH (nachfolgend "Anbieter" genannt) angeboten werden ohne nochmaliger ausdrücklicher Vereinbarung ausschliesslich aufgrund dieser Geschäftsbedingungen.
+                    Durch die Auslösung einer Bestellung oder in Anspruchnahme einer Leistung gelten die genannten Bedinungen als angenommen. Allgemeinen Einkäuferbedingungen werden hiermit widersprochen. Jegliche Abweichungen von diesen Geschäftsbedingungen sind ungültig,
+                    sofern nicht eine schriftliche und von einem rechtlichen Vertreter des Anbieters unterschreibene Ausnahmebesätigung vorliegt.  
+                </p>
 
-        <h4 class="paragraph">§2 Gültigkeit</h4>
-        <h4 class="paragraph">§3 Leistungen</h4>
-        <h4 class="paragraph">§4 Preise und Zahlungsbedingungen</h4>
-        <h4 class="paragraph">§5 Haftung</h4>
-        <h4 class="paragraph">§6 Wiederrufsrecht</h4>
-    </div>
+                <h4 class="paragraph">§2 Gültigkeit</h4>
+                <h5 class="sub-paragraph">§2.1 Vertragsabschluss</h5>
+                <p>
+                    Der Vertrag zwsichen dem Anbieter und dem Kunden kommt durch eine getätigte Bestellung, eine schriftliche Anfrage vià E-Mail mit anschliessender Bestätigung der Auftragsannahme durch den Anbieter oder durch Auslieferung der Ware zustande. Bei Bestellungen über die Webseite des
+                    Anbieters wird dem Kunden zuerst die Bestellung offeriert. Erst durch eine schriftliche Bestätigung durch den Kunden gilt die Bestellung als gültig.
+                </p>
+                <h5 class="sub-paragraph">§2.2 Nicht zustandekommen des Vertrages</h5>
+                <p>
+                    Bestellungen, die nicht den geltenden Gesetzen entsprechen oder gegen die AGB des Anbieters verstossen, sowie Bestellungen bei deren es sich aus Sicht des Anbieters um eine Scherzbesellung handelt, sind ungültig. Dazu gehören insbesondere
+                    Bestellungen, die gegen das Urheberrecht,das Wettbewerbsrecht oder sonstige geltende Gesetze verstossen. Der Anbeiter behält sich das Recht vor, solche ungültigen Bestellungen ohne Angaben von Gründen abzulehnen oder nachträglich zu stornieren.
+                </p>
+                <h5 class="sub-paragraph">§2.3 Auftragsbestätigung</h5>
+                <p>
+                    Auftragsbestätigungen werden durch den Anbieter nur auf Wunsch des Kunden ausgestellt und gelten nur für die im Dokument hinterlegte Bestellung.
+                </p>
+                <h5 class="sub-paragraph">§2.4 Waffengesetz</h5>
+                <p>
+                    Der Anbieter darf keine Leistungen oder Produkte anbieten, die gegen das Waffengesetz verstoßen. Dazu gehören insbesondere Gegenstände, die als Waffen oder Waffenteile im Sinne des Waffengesetzes gelten, sowie Gegenstände, 
+                    die für den Bau von Waffen oder Waffenteilen bestimmt sind. Der Kunde versichert, dass die von ihm bestellten Leistungen und Produkte nicht gegen das Waffengesetz verstoßen und dass er keine Waffen oder Waffenteile herstellen 
+                    möchte. Der Anbieter behält sich das Recht vor, Bestellungen, die gegen das Waffengesetz verstoßen, ohne Angabe von Gründen abzulehnen oder nachträglich zu stornieren. Verstösse gegen diese Richtlinien werden direkt den zuständigen
+                    Behörden gemeldet.
+                </p>
+
+                <h4 class="paragraph">§3 Leistungen</h4>
+                <h5 class="sub-paragraph">§3.1 Eigenschaften der bestellten Elementen</h5>
+                <p>
+                    Die mitgelieferten Angaben zu den Teilen (u.a. Zeichnungen, Abbildungen, etc.) sind als Richtwerte zu verstehen. Der Anbieter übernimmt keine Garantie für die Eigenschaften der dem Kunden gelieferte Ware, sofern nicht eine schriftliche und von einem rechtlichen
+                    Vertreter des Anbieters unterschreibene Ausnahmebesätigung vorliegt
+                </p>
+
+                <h4 class="paragraph">§4 Lieferung</h4>
+                <h5 class="sub-paragraph">§4.1 Liefertermin</h5>
+                <p>
+                    Termine und Lieferfristen sind unverbindlich sofern nicht eine schriftliche und von einem rechtlichen Vertreter des Anbieters unterschreibene Ausnahmebesätigung vorliegt. Die Angabe von bestimmten Lieferfristen und Liefertermine durch den Anbieter stehen unter
+                    der Voraussetzung der richtigen und rechtzeitigen Belieferung des Anbieters durch Zulieferanten und Hersteller. 
+                </p>
+                <h5 class="sub-paragraph">§4.2 Lieferung und Annahmeverzug</h5>
+                <p>
+                    Die bestellten Artiekl werden vom Anbieter mit der Schweizerischen Post (nachfologend "Zusteller" genannt) verschickt. Die Lieferung erfolgt Standartmässig mit B-Post. Wenn der Käufer nach Ablauf einer ihm gesetzlichen Nachfiist die Annahem der Liefergegenstände verweigert
+                    oder erklärt, die Ware nicht abnehmen zu wollen, ist es dem Anbieter erlaubt, die Erfüllung des Vertrages zu verweigern oder Schadensersatz gem. §x.1 zu fordern.
+                </p>
+                <h5 class="sub-paragraph">§4.3 Annhame der Lieferung</h5>
+                <p>
+                    Sichtbare Mengendifferenzen müssen innerhalb von 24 Stunden nach Warenerhalt, verdeckte Mengendifferenzen innerhalb von 2 Arbeitstagen nach Warenerhalt, vom Kunden dem Anbieter mitgeteilt werden. Beanstandungen zu möglichen Beschädigungen, Verspätungen, Verlust oder schlechter
+                    Verpackung sind spätestens 2 Arbeitstage nach Eingang der Warensendung anzumelden. Erfolgt die Anmeldung von Mängeln nicht in diesem Zeitraum verallen sämtliche Ansprüche des Kunden.
+                </p>
+
+                <h4 class="paragraph">§4 Preise und Zahlungsbedingungen</h4>
+                <h5 class="sub-paragraph">§4.1 Preise</h5>
+                <p>
+                    Massgebend sind die von dem Anbieter und der rechtmössig dazugehörigen Webseite genannte Preise. Die genannten Preise sind für 
+                </p>
+
+                <h4 class="paragraph">§5 Haftung</h4>
+                <h4 class="paragraph">§6 Wiederrufsrecht</h4>
+                <h4 class="paragraph">§7 Schadensersatz</h4>
+                <h5 class="sub-paragraph">§7.1 Schadensersatz durch SwissPrinting</h5>
+                <p>
+                    Der Anbieter ist berechtigt als Schadenseratz wahlweise pauschal 25% des vereinbarten Kaufpreises oder den Ersatz des effektiv entstandenen Schadens vom Käufer zu fordern.
+                </p>
+            </div>
+        </div>
+    </div>-->
 
     <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <div id="111b6267-86ff-4b47-8532-966f3a42897b-quickmenu"></div></body>
