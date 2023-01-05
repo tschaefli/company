@@ -21,10 +21,6 @@
     height: auto;
 }
 
-.team-left {
-    text-align: left;
-}
-
 .role-title {
     font-style: italic;
 }
@@ -38,3 +34,37 @@
     color: darkslategrey;
     font-style: italic;
 }
+
+.header {
+    background-color: #5D6369 !important;
+}
+
+.selection {
+    color: white;
+    font-size: large;
+    cursor: default !important;
+    text-decoration: none;
+}
+
+.selection:hover {
+    color: #80E04C;
+}
+
+.btn-hover-1:hover {
+    color: #80E04C !important;
+}
+
+@media screen and (min-width: 992px) {
+.team-info-1 {
+    text-align: left !important;
+    width: 95%;
+}
+}
+
+@media screen and (max-width: 991px) {
+.team-info-1 {
+    text-align: center !important;
+    width: 95%;
+}
+}
+  
